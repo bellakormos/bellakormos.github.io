@@ -1,5 +1,5 @@
 ---
-title: "Bella Kormos"
+title: "Isabelle Kormos"
 image: goat.png
 toc: false
 about: 
