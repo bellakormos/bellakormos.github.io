@@ -3,12 +3,14 @@ project:
   output-dir: docs
 
 website:
-  title: "bellakormos.github.io"
+  title: "Bella Kormos"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: about_me.qmd
+        text: About me
+       
 
 format:
   html:
@@ -16,6 +18,7 @@ format:
       - cosmo
       - brand
     css: styles.css
+    page-layout: full
     toc: true
 
 editor: visual
