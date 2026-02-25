@@ -20,9 +20,7 @@ website:
 
 format:
   html:
-    theme:
-      [minty, styles.scss]
-    css: styles.css
+    theme : styles.scss # Apply styles.scss file to theme
     page-layout: full
     toc: true
 
