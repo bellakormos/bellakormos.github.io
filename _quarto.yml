@@ -21,6 +21,7 @@ website:
 format:
   html:
     theme : styles.scss # Apply styles.scss file to theme
+    mainfont: "EB Garamond"
     page-layout: full
     toc: true
 
