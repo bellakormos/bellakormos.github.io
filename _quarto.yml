@@ -10,6 +10,12 @@ website:
         text: Home
       - href: about_me.qmd
         text: About me
+      - href: projects.qmd
+        text: Projects
+      - href: interests.qmd
+        text: Interests
+      - href: cv.qmd
+        text: Resume
        
 
 format:
