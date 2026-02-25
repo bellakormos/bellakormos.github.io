@@ -21,8 +21,8 @@ website:
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      light: morph
+      dark: solar
     css: styles.css
     page-layout: full
     toc: true
