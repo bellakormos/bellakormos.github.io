@@ -7,18 +7,20 @@ about:
   image-shape: round
   image-width: 17em
   links:
-    - text: LinkedIn
-      href: www.linkedin.com/in/isabelle-kormos-b9931b294
-    - icon: github
-      text: GitHub
+    - icon: linkedin # add brand icon
+      text: LinkedIn
+      href: www.linkedin.com/in/isabelle-kormos-b9931b294 # link my linked in
+    - icon: github # add brand icon
+      text: GitHub 
       href: https://github.com/bellakormos
-    - text: Email
+    - icon: laptop # add laptop icon
+      text: Email
       href: mailto:bella.kormos@gmail.com
 ---
 
-:::{#hero-heading}
+## Welcome!
 
-Hi! Welcome to my website, I hope you are having a wonderful day! My name is Bella Kormos, and I am a third year student at University of California, Santa Barbara. I love traveling, being in nature, playing volleyball, doing yoga, wheel-throwing, and backpacking.
+Hello, I hope you are having a wonderful day! My name is Bella Kormos, and I am a third year student at University of California, Santa Barbara. I love traveling, being in nature, playing volleyball, doing yoga, wheel-throwing, and backpacking.
 
 ## Education
 
