@@ -21,8 +21,7 @@ website:
 format:
   html:
     theme:
-      light: morph
-      dark: solar
+      [minty, styles.scss]
     css: styles.css
     page-layout: full
     toc: true

@@ -1,0 +1,18 @@
+/*-- scss:defaults --*/
+
+/* Sass variables — these override Bootswatch/Bootstrap defaults */
+$body-bg: #a3b899;
+$navbar-bg: #1a3a2a;
+$link-color: #4a6830;
+
+/*-- scss:rules --*/
+
+/* Regular CSS goes here */
+h1, h2, h3 {
+  color: #c8d8e4;
+}
+
+.navbar {
+  border-bottom: 3px solid #4a6830;
+  
+}
