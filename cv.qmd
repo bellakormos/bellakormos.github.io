@@ -6,4 +6,4 @@ format: html
 [Download Resume](resume.pdf){.btn .btn-outline-success}
 
 <iframe src="resume.pdf" width="100%" height="800px">
-</iframe>
+</iframe> 
