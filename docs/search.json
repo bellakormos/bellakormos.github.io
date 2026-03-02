@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "My blog",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
     "objectID": "cv.html",
     "href": "cv.html",
     "title": "Resume",
@@ -33,12 +47,5 @@
     "title": "Isabelle Kormos",
     "section": "Experience",
     "text": "Experience\nCheadle Center for Biodiversity and Ecological Restoration| Student Worker | September - present\nUCSB Biology Greenhouses | Horticulture Intern | Sept 2024 - March 2025"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
   }
 ]

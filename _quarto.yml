@@ -10,7 +10,7 @@ website:
         text: Home
       - href: about_me.qmd
         text: About me
-      - href: projects.qmd
+      - href: posts.qmd # add blog post for projects
         text: Projects
       - href: interests.qmd
         text: Interests
