@@ -1,5 +1,5 @@
 ---
-title: "ENV S 155: The East Oakland Compost Center Project Proposal"
+title: "Built Environment: The East Oakland Compost Center Project Proposal"
 author:
   - name: Bella Kormos
     affiliation: UCSB Environmental Studies BS\n Spanish minor 
@@ -8,7 +8,7 @@ image: oakland2.png
 draft: false
 ---
 
-[Final Project](es155.pdf)
+[ENVS 155 Final Project](es155.pdf)
 
 <iframe src="es155.pdf" width="100%" height="800px">
 
