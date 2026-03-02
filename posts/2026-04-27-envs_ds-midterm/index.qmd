@@ -1,0 +1,14 @@
+---
+title: "Environmental Statistics: Midterm"
+author:
+  - name: Bella Kormos
+    affiliation: UCSB Environmental Studies BS\n Spanish minor 
+categories: [Quarto, R-studio]
+image: stats_icon.png
+draft: false
+---
+[ENVS 193DS Midterm](midterm_resub.pdf)
+
+<iframe src="midterm_resub.pdf" width="85%" height="500px">
+
+</iframe>
