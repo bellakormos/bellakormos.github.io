@@ -2,9 +2,9 @@
   {
     "objectID": "posts.html",
     "href": "posts.html",
-    "title": "My blog",
+    "title": "My projects",
     "section": "",
-    "text": "No matching items"
+    "text": "ENV S 155: Project Proposal\n\n\n\nWriting Sample\n\n\n\n\n\n\n\nBella Kormos\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -12,13 +12,6 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "cv.html",
-    "href": "cv.html",
-    "title": "Resume",
-    "section": "",
-    "text": "Download Resume"
   },
   {
     "objectID": "index.html",
@@ -47,5 +40,12 @@
     "title": "Isabelle Kormos",
     "section": "Experience",
     "text": "Experience\nCheadle Center for Biodiversity and Ecological Restoration| Student Worker | September - present\nUCSB Biology Greenhouses | Horticulture Intern | Sept 2024 - March 2025"
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Download Resume"
   }
 ]
