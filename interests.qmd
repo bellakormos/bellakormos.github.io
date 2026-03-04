@@ -2,7 +2,7 @@
 title: "Interests"
 format: html
 listing:
-  contents: interests/ceramics # matches the name in directory
+  contents: interests # matches the name in directory
   sort: "date desc" # can also sort on more than one field
   type: grid
   categories: true # allows you to sort posts by assigned categories 

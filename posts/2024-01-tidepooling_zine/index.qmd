@@ -1,0 +1,12 @@
+---
+title: "Zine: Guide to Tidepooling at UCSB"
+categories: [Creative science communication]
+image: tidepool_preview.png
+draft: false
+---
+
+[ENV S 40: Zine Final Project](tidepool.pdf){.btn .btn-outline-success}
+
+<iframe src="tidepool.pdf" width="100%" height="800px">
+
+</iframe>

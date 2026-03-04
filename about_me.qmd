@@ -1,4 +1,24 @@
 ---
-title: "about_me"
+title: "About me!"
 format: html
 ---
+
+-   1 sister, baba lives with me, parents
+
+    -   photos of fam
+
+-   Half bulgarian
+
+    -   photos from bulgaria
+
+-   from oakland CA
+
+    -   happy place is the forest near my house, in cafés, and hiking with my friends
+
+-   lived in morocco (pic from there)
+
+-   studied abroad in madrid
+
+    -   studying spanish since 6th grade
+
+-   favorite travel destinations!
