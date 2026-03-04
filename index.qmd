@@ -9,11 +9,11 @@ about:
   links:
     - icon: linkedin # add brand icon
       text: LinkedIn
-      href: www.linkedin.com/in/isabelle-kormos-b9931b294 # link my linked in
+      href: https://www.linkedin.com/in/isabelle-kormos-b9931b294 # link my linked in
     - icon: github # add brand icon
       text: GitHub 
       href: https://github.com/bellakormos
-    - icon: laptop # add laptop icon
+    - icon: envelope # add laptop icon
       text: Email
       href: mailto:bella.kormos@gmail.com
 ---
