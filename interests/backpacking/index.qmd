@@ -1,11 +1,16 @@
 ---
 title: "Backpacking & Hiking"
 format: html
+categories: [Some stories & Adventures]
+image: pack.png
 ---
 
-- wildland's program 
-- nats bday 
-- big sur 
-- other hikes 
+-   wildland's program
 
-- give a little story for each one 
+-   nats bday
+
+-   big sur
+
+-   other hikes
+
+-   give a little story for each one

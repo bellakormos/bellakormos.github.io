@@ -1,6 +1,76 @@
 ---
 title: "Traveling!"
 format: html
+categories: [Interactive Map]
 image: travel.png
 ---
 
+My travel destinations
+
+*Code:*
+
+```{r}
+#| label: Set up
+#| message: false
+#| warning: false
+# set up 
+Sys.setenv(PROJ_LIB = "/opt/conda/share/proj")
+Sys.setenv(PROJ_LIB = "/opt/conda/share/proj")
+```
+
+```{r}
+#| label: Load in packages
+#| message: false
+#| warning: false
+
+# Loading required libraries
+library(sf)  # spatial data handling             
+library(leaflet) # interactive map creation       
+library(htmltools) # HTML rendering for labels and popups       
+library(janitor) # cleaning column names
+library(tidyverse) # data manipulation and piping
+library(readr)  # reading CSV files
+
+```
+
+```{r}
+#| label: create map
+#| message: false
+#| warning: false
+
+# load map.csv and clean column names to lowercase
+invisible(Travel <- read_csv("map.csv") |> clean_names())
+
+# build interactive map from travel data
+leaflet(data = Travel) %>%
+  addProviderTiles("Esri.WorldImagery") %>% # satellite imagery background
+  
+  # clickable markers that show country name in popup
+  addMarkers(~long, ~latitude, popup = ~country) %>%
+  
+  # always-visible labels below each marker
+  addLabelOnlyMarkers(
+    ~long, ~latitude,
+    label = ~country,        # change ~place to ~country
+    labelOptions = labelOptions(
+      noHide = TRUE,  # label always visible, not just on hover
+      direction = "bottom", # label sits below the marker pin
+      textOnly = TRUE, # no background box, just text 
+      style = list( 
+        "color" = "white",  # white text for visibility on satellite map
+        "font-size" = "12px", # change font size
+        "font-weight" = "bold" # bold text for clarity
+      )
+    )
+  )
+```
+
+## Some traveling highlights:
+
+-   Thailand
+
+-   Finland: northern lights
+
+-   Italy
+
+-   Peru

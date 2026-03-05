@@ -8,24 +8,24 @@ draft: false
 
 Here is some of my past ceramics work!
 
-2023: 
+2023:
 
-![](ceramics2.png){width=300px}
+![](ceramics2.png){width="300px"}
 
-![](ceramics1.png){width=300px}
+![](ceramics1.png){width="300px"}
 
-![](ceramics3.png){width=300px}
+![](ceramics3.png){width="300px"}
 
-![](ceramics4.png){width=300px}
+![](ceramics4.png){width="300px"}
 
-![](ceramics5.png){width=300px}
+![](ceramics5.png){width="300px"}
 
-![](ceramics6.png){width=300px}
+![](ceramics6.png){width="300px"}
 
-![](ceramics7.png){width=300px}
+![](ceramics7.png){width="300px"}
 
-![](ceramics8.png){width=300px}
+![](ceramics8.png){width="300px"}
 
-![](ceramics9.png){width=300px}
+![](ceramics9.png){width="300px"}
 
-![](ceramics10.png){width=300px}
+![](ceramics10.png){width="300px"}

@@ -7,6 +7,20 @@
     "text": "Built Environment: The East Oakland Compost Center Project Proposal\n\n\n\nWriting Sample\n\n\n\n\n\n\n\nBella Kormos\n\n\n\n\n\n\n\n\n\n\n\n\n\nZine: Guide to Tidepooling at UCSB\n\n\n\nCreative science communication\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEnvironmental Statistics: Midterm\n\n\n\nQuarto\n\nR-studio\n\n\n\n\n\n\n\nBella Kormos\n\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "interests/traveling/index.html",
+    "href": "interests/traveling/index.html",
+    "title": "Traveling!",
+    "section": "",
+    "text": "My travel destinations\nCode:\n# set up \nSys.setenv(PROJ_LIB = \"/opt/conda/share/proj\")\nSys.setenv(PROJ_LIB = \"/opt/conda/share/proj\")\n# Loading required libraries\nlibrary(sf)  # spatial data handling             \nlibrary(leaflet) # interactive map creation       \nlibrary(htmltools) # HTML rendering for labels and popups       \nlibrary(janitor) # cleaning column names\nlibrary(tidyverse) # data manipulation and piping\nlibrary(readr)  # reading CSV files\n# load map.csv and clean column names to lowercase\ninvisible(Travel &lt;- read_csv(\"map.csv\") |&gt; clean_names())\n\n# build interactive map from travel data\nleaflet(data = Travel) %&gt;%\n  addProviderTiles(\"Esri.WorldImagery\") %&gt;% # satellite imagery background\n  \n  # clickable markers that show country name in popup\n  addMarkers(~long, ~latitude, popup = ~country) %&gt;%\n  \n  # always-visible labels below each marker\n  addLabelOnlyMarkers(\n    ~long, ~latitude,\n    label = ~country,        # change ~place to ~country\n    labelOptions = labelOptions(\n      noHide = TRUE,  # label always visible, not just on hover\n      direction = \"bottom\", # label sits below the marker pin\n      textOnly = TRUE, # no background box, just text \n      style = list( \n        \"color\" = \"white\",  # white text for visibility on satellite map\n        \"font-size\" = \"12px\", # change font size\n        \"font-weight\" = \"bold\" # bold text for clarity\n      )\n    )\n  )"
+  },
+  {
+    "objectID": "interests/traveling/index.html#some-traveling-highlights",
+    "href": "interests/traveling/index.html#some-traveling-highlights",
+    "title": "Traveling!",
+    "section": "Some traveling highlights:",
+    "text": "Some traveling highlights:\n\nThailand\nFinland: northern lights\nItaly\nPeru"
+  },
+  {
     "objectID": "interests/ceramics/index.html",
     "href": "interests/ceramics/index.html",
     "title": "My ceramics journey!",
@@ -53,7 +67,7 @@
     "href": "interests.html",
     "title": "Interests",
     "section": "",
-    "text": "My ceramics journey!\n\n\n\nPast ceramics work\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBackpacking & Hiking\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTraveling!\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "My ceramics journey!\n\n\n\nPast ceramics work\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBackpacking & Hiking\n\n\n\nSome stories & Adventures\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTraveling!\n\n\n\nInteractive Map\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "research.html",
