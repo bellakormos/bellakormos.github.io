@@ -2,7 +2,7 @@
 title: "Built Environment: The East Oakland Compost Center Project Proposal"
 author:
   - name: Bella Kormos
-    affiliation: UCSB Environmental Studies BS\n Spanish minor 
+    affiliation: UCSB Environmental Studies BS; Spanish minor 
 categories: [Writing Sample]
 image: oakland2.png
 draft: false
