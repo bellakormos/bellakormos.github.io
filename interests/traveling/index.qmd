@@ -13,7 +13,6 @@ My travel destinations
 #| label: Set up
 #| message: false
 #| warning: false
-#| eval: false
 
 # set up 
 Sys.setenv(PROJ_LIB = "/opt/conda/share/proj")
@@ -24,7 +23,6 @@ Sys.setenv(PROJ_LIB = "/opt/conda/share/proj")
 #| label: Load in packages
 #| message: false
 #| warning: false
-#| eval: false
 
 # Loading required libraries
 library(sf)  # spatial data handling             
@@ -40,7 +38,6 @@ library(readr)  # reading CSV files
 #| label: create map
 #| message: false
 #| warning: false
-#| eval: false
 
 # load map.csv and clean column names to lowercase
 invisible(Travel <- read_csv("map.csv") |> clean_names())
