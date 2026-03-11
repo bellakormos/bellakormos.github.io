@@ -1,16 +1,35 @@
 ---
 title: "Backpacking & Hiking"
 format: html
-categories: [Some stories & Adventures]
+categories: [Some Adventures]
 image: pack.png
 ---
+## Peru
 
--   wildland's program
+<div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 10px;">
+  <img src="peru.png" style="width: 400px; height: 400px; object-fit: cover;">
+</div>
 
--   nats bday
+<p style="text-align: center;"> 2025: Hiking Machu Picchu!</p>
 
--   big sur
+## Bulgaria Rewilding in Action: Wildland's Field Study Program
 
--   other hikes
+<div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+  <img src="pack.png" style="width: 24%; height: 300px; object-fit: cover;">
+  <img src="alpine.png" style="width: 24%; height: 300px; object-fit: cover;">
+  <img src="backpacking.png" style="width: 24%; height: 300px; object-fit: cover;">
+  <img src="mountain.png" style="width: 24%; height: 300px; object-fit: cover;">
+</div>
 
--   give a little story for each one
+<p style="text-align: center;"> 2024: While backpacking, I studied the coexistence of large carnivores and humans in the Bulgarian mountains.</p>
+
+
+## Glacier & Olympic National Park
+
+<div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+  <img src="mountain.png" style="width: 32%; height: 300px; object-fit: cover;">
+  <img src="glacier.png" style="width: 32%; height: 300px; object-fit: cover;">
+  <img src="olympic.png" style="width: 32%; height: 300px; object-fit: cover;">
+</div>
+
+<p style="text-align: center;"> 2023: Road trip to Oregon, Washington, and Montana.</p>

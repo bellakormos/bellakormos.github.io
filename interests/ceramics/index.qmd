@@ -4,28 +4,32 @@ format: html
 categories: [Past ceramics work]
 image: ceramics2.png
 draft: false
+lightbox: true
 ---
+
 
 Here is some of my past ceramics work!
 
-2023:
+## 2023
 
-![](ceramics2.png){width="300px"}
+::: {layout-ncol=3}
+![](ceramics1.png)
 
-![](ceramics1.png){width="300px"}
+![](ceramics2.png)
 
-![](ceramics3.png){width="300px"}
+![](ceramics3.png)
 
-![](ceramics4.png){width="300px"}
+![](ceramics4.png)
 
-![](ceramics5.png){width="300px"}
+![](ceramics5.png)
 
-![](ceramics6.png){width="300px"}
+![](ceramics6.png)
 
-![](ceramics7.png){width="300px"}
+![](ceramics7.png)
 
-![](ceramics8.png){width="300px"}
+![](ceramics8.png)
 
-![](ceramics9.png){width="300px"}
+![](ceramics9.png)
 
-![](ceramics10.png){width="300px"}
+![](ceramics10.png)
+:::

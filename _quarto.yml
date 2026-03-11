@@ -16,8 +16,6 @@ website:
         text: Interests
       - href: cv.qmd
         text: Resume
-      - href: research.qmd
-        text: Research experience 
        
 
 format:

@@ -3,22 +3,53 @@ title: "About me!"
 format: html
 ---
 
--   1 sister, baba lives with me, parents
+# Hometown
+I am from the Bay Area in the beautiful Oakland hills! I grew up with my sister, my parents, my Baba, and my dog! My family and I love going to the beach, tide-pooling, and traveling. 
 
-    -   photos of fam
+<div style="display: flex; justify-content: center; gap: 15px;">
+  <img src="family.png" style="width: 30%; height: 250px; object-fit: cover;">
+  <img src="elise.png" style="width: 30%; height: 250px; object-fit: cover;">
+  <img src="baba.png" style="width: 30%; height: 250px; object-fit: cover;">
+  <img src="elise2.png" style="width: 30%; height: 250px; object-fit: cover;">
+  <img src="bruno.png" style="width: 30%; height: 250px; object-fit: cover;">
+  <img src="fam.png" style="width: 30%; height: 250px; object-fit: cover;">
+</div>
 
--   Half bulgarian
 
-    -   photos from bulgaria
+# My happiest place
+Journaling in the forest near my house is my happiest place. I also absolutley love discovering new cafés, doing yoga, and playing volleyball! 
 
--   from oakland CA
+<div style="display: flex; justify-content: center; gap: 15px;">
+  <img src="forest.png" style="width: 300px; height: 300px; object-fit: cover;">
+  <img src="forest2.png" style="width: 300px; height: 300px; object-fit: cover;">
+</div>
 
-    -   happy place is the forest near my house, in cafés, and hiking with my friends
 
--   lived in morocco (pic from there)
+# I am half-Bulgarian
+And I grew up hiking in the Bulgarian mountains and speaking the language! Visiting my family and the beautiful country was a big reason that I decided to study the environment.
 
--   studied abroad in madrid
+<div style="display: flex; justify-content: center; gap: 15px;">
+  <img src="tunka.png" style="width: 30%; height: 300px; object-fit: cover;">
+  <img src="fall.png" style="width: 30%; height: 300px; object-fit: cover;">
+  <img src="lake.png" style="width: 30%; height: 300px; object-fit: cover;">
+</div>
 
-    -   studying spanish since 6th grade
 
--   favorite travel destinations!
+# Fun fact
+I lived in Rabat, Morocco for a year when I was younger! 
+
+<div style="display: flex; justify-content: center; gap: 15px;">
+  <img src="morocco.png" style="width: 300px; height: 300px; object-fit: cover;">
+  <img src="morroco2.png" style="width: 300px; height: 300px; object-fit: cover;">
+</div>
+
+
+# Madrid!
+I studied abroad in Madrid, and I have been studying spanish since the 6th grade. Madrid was a magical place to live and I hope to live in Spain again if I get the chance! 
+
+<div style="display: flex; justify-content: center; gap: 15px;">
+  <img src="palace.png" style="width: 300px; height: 300px; object-fit: cover;">
+  <img src="gines.png" style="width: 300px; height: 300px; object-fit: cover;">
+</div>
+
+

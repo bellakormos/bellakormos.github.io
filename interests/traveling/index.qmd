@@ -7,24 +7,23 @@ image: travel.png
 
 My travel destinations
 
-*Code:*
-
 ```{r}
-#| label: Set up
+#| label: set up
 #| message: false
 #| warning: false
+#| code-fold: true
 
 # set up 
-Sys.setenv(PROJ_LIB = "/opt/conda/share/proj")
 Sys.setenv(PROJ_LIB = "/opt/conda/share/proj")
 ```
 
 ```{r}
-#| label: Load in packages
+#| label: load in packages
 #| message: false
 #| warning: false
+#| code-fold: true
 
-# Loading required libraries
+# loading required libraries
 library(sf)  # spatial data handling             
 library(leaflet) # interactive map creation       
 library(htmltools) # HTML rendering for labels and popups       
@@ -38,6 +37,7 @@ library(readr)  # reading CSV files
 #| label: create map
 #| message: false
 #| warning: false
+#| code-fold: true
 
 # load map.csv and clean column names to lowercase
 invisible(Travel <- read_csv("map.csv") |> clean_names())
@@ -65,13 +65,3 @@ leaflet(data = Travel) %>%
     )
   )
 ```
-
-## Some traveling highlights:
-
--   Thailand
-
--   Finland: northern lights
-
--   Italy
-
--   Peru
