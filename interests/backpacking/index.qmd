@@ -8,6 +8,7 @@ image: pack.png
 
 <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 10px;">
   <img src="peru.png" style="width: 400px; height: 400px; object-fit: cover;">
+  <img src="machu.png" style="width: 400px; height: 400px; object-fit: cover;">
 </div>
 
 <p style="text-align: center;"> 2025: Hiking Machu Picchu!</p>
@@ -15,10 +16,10 @@ image: pack.png
 ## Bulgaria Rewilding in Action: Wildland's Field Study Program
 
 <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
-  <img src="pack.png" style="width: 24%; height: 300px; object-fit: cover;">
   <img src="alpine.png" style="width: 24%; height: 300px; object-fit: cover;">
   <img src="backpacking.png" style="width: 24%; height: 300px; object-fit: cover;">
-  <img src="mountain.png" style="width: 24%; height: 300px; object-fit: cover;">
+  <img src="chamois.png" style="width: 24%; height: 300px; object-fit: cover;">
+  <img src="julian.png" style="width: 24%; height: 300px; object-fit: cover;">
 </div>
 
 <p style="text-align: center;"> 2024: While backpacking, I studied the coexistence of large carnivores and humans in the Bulgarian mountains.</p>
