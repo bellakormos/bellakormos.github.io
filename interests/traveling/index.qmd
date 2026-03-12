@@ -40,7 +40,7 @@ library(readr)  # reading CSV files
 #| code-fold: true
 
 # load map.csv and clean column names to lowercase
-invisible(Travel <- read_csv("map.csv") |> clean_names())
+invisible(Travel <- read_csv("map.csv") %>% clean_names())
 
 # build interactive map from travel data
 leaflet(data = Travel) %>%
@@ -52,7 +52,7 @@ leaflet(data = Travel) %>%
   # always-visible labels below each marker
   addLabelOnlyMarkers(
     ~long, ~latitude,
-    label = ~country,        # change ~place to ~country
+    label = ~country, # change ~place to ~country
     labelOptions = labelOptions(
       noHide = TRUE,  # label always visible, not just on hover
       direction = "bottom", # label sits below the marker pin

@@ -20,7 +20,7 @@ image: pack.png
   <img src="backpacking.png" style="width: 24%; height: 300px; object-fit: cover;">
   <img src="chamois.png" style="width: 24%; height: 300px; object-fit: cover;">
   <img src="julian.png" style="width: 24%; height: 300px; object-fit: cover;">
-</div>
+s</div>
 
 <p style="text-align: center;"> 2024: While backpacking, I studied the coexistence of large carnivores and humans in the Bulgarian mountains.</p>
 

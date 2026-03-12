@@ -8,6 +8,182 @@ image: stats_icon.png
 draft: false
 ---
 
+# **Midterm for ENVS 193DS: Statistical analysis, data visualizations, and communication**
+
+## Reproducing an analysis
+In the code and text below, I explore and analyze the difference in mean tussock diameter across burned vs un-burned sites in the moist acidic tussock tundra at the site of the 2007 Anaktuvuk River fire. This is problem 3 from my midterm linked below, and I explain the variables, hypotheses, run appropriate statistical tests, and ultimatley visualize the data.
+
+### a. Variables
+
+-   The response variable: Average tussock diameter measured in cm, which is a
+    quantitative, continuous variable.						
+
+-   The predictor variable is the site type (burned or unburned) within the 2007
+    Anatuvuk River Fire scar, which is a binary categorical variable.
+
+-   The response variable measurement: The researchers measured the average
+    tussock diameter along four 100 meter transects that were located in each
+    cardinal direction from the meteorological tower. The tussocks that intercepted
+    the transect tape were measured in two directions (N-S and E-W) with a caliper
+    (Methods section, paragraph 5 (Microtopography)).
+
+    						
+
+### b. Null and Alternative Hypotheses				
+
+-   The null hypothesis (H0): There is no significant difference in the mean tussock mound
+    diameters (cm) in burned and unburned sites.
+
+-   The alternative Hypothesis (HA): There is a significant difference in the mean tussock
+    mound diameters (cm) in burned and unburned sites.			
+    						
+
+### c. Set up: Reading in packages and Data
+```{r}
+#| label: reading in packages and data
+#| message: false
+#| warning: false
+#| code-fold: true
+library(janitor)
+library(rstatix) # new package for effect size
+library(tidyverse) # load in all packages library(janitor)
+library(flextable) # new package to create a table library(rstatix) # new package for effect size
+
+tussocks <- read_csv("tussock_height.csv") # store the data and save object as "tussocks" temp <- read_csv("temp_2024.csv") # store the data and save object as "temp"
+```
+
+### c. Cleaning and organizing data
+
+```{r}
+#| label: cleaning data
+#| message: false
+#| warning: false
+#| code-fold: true
+tussocks_clean <- tussocks |> # start with tussocks data, create new object with clean data
+  clean_names() |> # clean column names (lower case with underscores)
+  select(site, average_diameter) |> # select only the site and average_diameter columns
+  mutate(site = case_when(
+    site == "Sev" ~ "Burned", # change "Sev" site name to "Burned"
+    site == "Unb" ~ "Unburned")) # change "Unb" site name to "Unburned"
+tussocks_clean |>
+slice_sample(n = 10) # displays 10 random rows from the "tussocks_clean" data-frame
+```
+
+	
+### d. Summarizing and table displays
+
+```{r}
+#| label: summarizing data
+#| message: false
+#| warning: false
+#| code-fold: true
+tussocks_summary <- tussocks_clean |> # create an object called tussocks_summary using the tussocks_clean data frame
+  group_by(site) |> # group by site 
+  summarize(
+    mean = round(mean(average_diameter, na.rm = TRUE), digits = 1), # calculates the mean and rounds the value to 1 decimal place
+    se = round(sd(average_diameter, na.rm = TRUE) / sqrt(n()), digits = 1) # calculates standard error and rounds the value to 1 decimal place
+)
+# create polished table using flextable
+tussocks_summary |> # pipe the tussocks_summary data frame into the table
+  flextable() |> # flextable() converts the data frame into a formatted table object # renames the column headers to be more readable
+  set_header_labels(site = "Site",
+                    mean = "Mean",
+                    se = "Standard Error") |>
+  autofit() # automatically adjusts column widths to fit the content properly						
+```
+
+### e. Checking assumptions						
+
+**Check 1: Visual tool - Normally distributed variable**
+
+```{r}
+#| label: qq plot
+#| message: false
+#| warning: false
+#| code-fold: true
+ggplot(data = tussocks_clean,
+  aes(sample = average_diameter)) + # specifies the variable to check for normality
+geom_qq_line(color = "darkgreen") + # making reference line green so its easier to see
+  geom_qq() + # geom_qq() plots the QQ points comparing data to theoretical normal distribution
+  facet_wrap(~site) + # creates separate plots for each site (Burned and Unburned)
+  labs(title = "QQ Plot for Tussock Diameter by Site") + # adds title to the plot
+  theme_light() # applies a minimal theme to the plot
+```
+
+Visual check: The points on the QQ plot for both burned and unburned sites approximately follow the reference line with only minor deviations at the tails. The reference line represents the theoretical distribution, so tussock diameters appear normally distributed.
+
+**Check 2: Equal Variance Test**
+```{r}
+#| label: F-test
+#| message: false
+#| warning: false
+#| code-fold: true
+var.test( # perform an F-test to compare variances in tussock diameters
+  average_diameter ~ site, # test whether variances of tussock diameters differ by site 
+  data = tussocks_clean) # use the cleaned tussock data-set
+```
+Using a F-test of equal variance, I determined that group variances are equal (F-test, F(78, 110) = 0.93, p = 0.72).
+
+### f. Do a t-test
+```{r}
+#| label: t-test
+#| message: false
+#| warning: false
+#| code-fold: true
+t.test( # perform a two-sample t-test to compare mean tussock diameter
+  average_diameter ~ site, # test whether mean tussock diameters differ by site
+  var.equal = TRUE, # assume equal variances based on the variance test
+  data = tussocks_clean # use the cleaned data frame again
+)
+```
+
+### g. Written Communication
+We found a significant difference in tussock mound diameters between unburned and burned sites (Student’s t-test: t(188) = 4.5, p < 0.001, α = 0.05) with a moderate effect size (Cohen’s d = 0.66). On average, the mean tussock diameters were larger by about 4.1 cm in burned sites (mean = 23.8 cm, SE = 0.7, n = 79) in comparison to unburned sites (mean = 19.7 cm, SE = 0.6, n = 111).
+
+### h. Making a new figure
+```{r}
+#| label: figure
+#| message: false
+#| warning: false
+#| code-fold: true
+# create plot with x-axis as site, y-axis as average diameter
+ggplot(data = tussocks_clean,
+       aes(x = site,
+           y = average_diameter,
+           color = site,
+           shape = site)) +
+# adds individual data points
+geom_jitter(width = 0.2, # jitters points horizontally
+            height = 0, # prevents vertical jitter
+            alpha = 0.4, # make transparent
+            size = 2) + # edit site of points
+stat_summary(geom = "point", # adds mean as a point
+             fun = mean, # calculates mean for each site
+             color = "red", # makes mean point "red"
+             size = 3) + # makes mean point larger than data points
+stat_summary(fun.data = mean_se, # calculates standard error and mean geom = "errorbar", # displays error bars
+             width = 0.2, # sets width of error bar caps
+             linewidth = 0.8, # sets thickness of error bar lines
+             color = "red") + # colors error bars red
+# adds plot title, author name as a subtitle, and labels axes
+labs(title = "Tussock Mound Diameter by Site Type",
+     subtitle = "Bella Kormos",
+     x = "Site",
+     y = "Average diameter (cm)") +
+# use a theme that creates white background without gridlines
+theme_classic() + # removes legend
+theme(legend.position = "none") +
+# sets custom colors for each site
+scale_color_manual(values = c("Burned" = "forestgreen", "Unburned" = "lightpink")) +
+# sets custom shapes (5 = open diamond, 0 = square)
+scale_shape_manual(values = c("Burned" = 5, "Unburned" = 0))
+```
+### i. Write a caption
+**Figure 1. Mean tussock diameter differs across sites.** The green open diamonds represent tussock diameters measured (cm) at burned sites, and the pink open squares represent the tussock diameter measured (cm) at unburned sites. The red points represent the means for each site, and lines above and below represent the standard error bars. Data Source: Rocha, A. 2021. Tussock height and diameter in moist acidic tussock tundra at the site of the 2007 Anaktuvuk River fire scar, and nearby unburned
+tundra measured in 2016 ver 1. Environmental Data Initiative. https://doi.org/10.6073/ pasta/1dccd3fdb3aa693f9c2b69a24f8306ed (Accessed 2026-02-10).
+
+
+# Rest of this assignment: 
 [ENVS 193DS Midterm](midterm_resub.pdf)
 
 <iframe src="midterm_resub.pdf" width="85%" height="500px">

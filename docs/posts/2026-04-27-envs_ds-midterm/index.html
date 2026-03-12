@@ -21,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -40,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-f749ddb6c416aa4351d4edf876453d0a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-79a240d0ec7c4a9cc47aeae9ca92adcf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,6 +103,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="../../site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="../../site_libs/tabwid-1.1.3/tabwid.js"></script>
 
 
 </head>
@@ -119,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Environmental Statistics: Midterm</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Quarto</div>
@@ -128,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
                   </div>
   </div>
     
-  <div class="quarto-title-meta-author column-page">
+  <div class="quarto-title-meta-author column-page-left">
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-heading">Affiliation</div>
     
@@ -142,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     </div>
 
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
         
     
@@ -153,21 +190,264 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#midterm-for-envs-193ds-statistical-analysis-data-visualizations-and-communication" id="toc-midterm-for-envs-193ds-statistical-analysis-data-visualizations-and-communication" class="nav-link active" data-scroll-target="#midterm-for-envs-193ds-statistical-analysis-data-visualizations-and-communication"><strong>Midterm for ENVS 193DS: Statistical analysis, data visualizations, and communication</strong></a>
+  <ul class="collapse">
+  <li><a href="#reproducing-an-analysis" id="toc-reproducing-an-analysis" class="nav-link" data-scroll-target="#reproducing-an-analysis">Reproducing an analysis</a>
+  <ul class="collapse">
+  <li><a href="#a.-variables" id="toc-a.-variables" class="nav-link" data-scroll-target="#a.-variables">a. Variables</a></li>
+  <li><a href="#b.-null-and-alternative-hypotheses" id="toc-b.-null-and-alternative-hypotheses" class="nav-link" data-scroll-target="#b.-null-and-alternative-hypotheses">b. Null and Alternative Hypotheses</a></li>
+  <li><a href="#c.-set-up-reading-in-packages-and-data" id="toc-c.-set-up-reading-in-packages-and-data" class="nav-link" data-scroll-target="#c.-set-up-reading-in-packages-and-data">c.&nbsp;Set up: Reading in packages and Data</a></li>
+  <li><a href="#c.-cleaning-and-organizing-data" id="toc-c.-cleaning-and-organizing-data" class="nav-link" data-scroll-target="#c.-cleaning-and-organizing-data">c.&nbsp;Cleaning and organizing data</a></li>
+  <li><a href="#d.-summarizing-and-table-displays" id="toc-d.-summarizing-and-table-displays" class="nav-link" data-scroll-target="#d.-summarizing-and-table-displays">d.&nbsp;Summarizing and table displays</a></li>
+  <li><a href="#e.-checking-assumptions" id="toc-e.-checking-assumptions" class="nav-link" data-scroll-target="#e.-checking-assumptions">e. Checking assumptions</a></li>
+  <li><a href="#f.-do-a-t-test" id="toc-f.-do-a-t-test" class="nav-link" data-scroll-target="#f.-do-a-t-test">f.&nbsp;Do a t-test</a></li>
+  <li><a href="#g.-written-communication" id="toc-g.-written-communication" class="nav-link" data-scroll-target="#g.-written-communication">g. Written Communication</a></li>
+  <li><a href="#h.-making-a-new-figure" id="toc-h.-making-a-new-figure" class="nav-link" data-scroll-target="#h.-making-a-new-figure">h. Making a new figure</a></li>
+  <li><a href="#i.-write-a-caption" id="toc-i.-write-a-caption" class="nav-link" data-scroll-target="#i.-write-a-caption">i. Write a caption</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#rest-of-this-assignment" id="toc-rest-of-this-assignment" class="nav-link" data-scroll-target="#rest-of-this-assignment">Rest of this assignment:</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
+<section id="midterm-for-envs-193ds-statistical-analysis-data-visualizations-and-communication" class="level1">
+<h1><strong>Midterm for ENVS 193DS: Statistical analysis, data visualizations, and communication</strong></h1>
+<section id="reproducing-an-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="reproducing-an-analysis">Reproducing an analysis</h2>
+<p>In the code and text below, I explore and analyze the difference in mean tussock diameter across burned vs un-burned sites in the moist acidic tussock tundra at the site of the 2007 Anaktuvuk River fire. This is problem 3 from my midterm linked below, and I explain the variables, hypotheses, run appropriate statistical tests, and ultimatley visualize the data.</p>
+<section id="a.-variables" class="level3">
+<h3 class="anchored" data-anchor-id="a.-variables">a. Variables</h3>
+<ul>
+<li><p>The response variable: Average tussock diameter measured in cm, which is a quantitative, continuous variable.</p></li>
+<li><p>The predictor variable is the site type (burned or unburned) within the 2007 Anatuvuk River Fire scar, which is a binary categorical variable.</p></li>
+<li><p>The response variable measurement: The researchers measured the average tussock diameter along four 100 meter transects that were located in each cardinal direction from the meteorological tower. The tussocks that intercepted the transect tape were measured in two directions (N-S and E-W) with a caliper (Methods section, paragraph 5 (Microtopography)).</p></li>
+</ul>
+</section>
+<section id="b.-null-and-alternative-hypotheses" class="level3">
+<h3 class="anchored" data-anchor-id="b.-null-and-alternative-hypotheses">b. Null and Alternative Hypotheses</h3>
+<ul>
+<li><p>The null hypothesis (H0): There is no significant difference in the mean tussock mound diameters (cm) in burned and unburned sites.</p></li>
+<li><p>The alternative Hypothesis (HA): There is a significant difference in the mean tussock mound diameters (cm) in burned and unburned sites.</p></li>
+</ul>
+</section>
+<section id="c.-set-up-reading-in-packages-and-data" class="level3">
+<h3 class="anchored" data-anchor-id="c.-set-up-reading-in-packages-and-data">c.&nbsp;Set up: Reading in packages and Data</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstatix) <span class="co"># new package for effect size</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># load in all packages library(janitor)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(flextable) <span class="co"># new package to create a table library(rstatix) # new package for effect size</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>tussocks <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"tussock_height.csv"</span>) <span class="co"># store the data and save object as "tussocks" temp &lt;- read_csv("temp_2024.csv") # store the data and save object as "temp"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="c.-cleaning-and-organizing-data" class="level3">
+<h3 class="anchored" data-anchor-id="c.-cleaning-and-organizing-data">c.&nbsp;Cleaning and organizing data</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tussocks_clean <span class="ot">&lt;-</span> tussocks <span class="sc">|&gt;</span> <span class="co"># start with tussocks data, create new object with clean data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() <span class="sc">|&gt;</span> <span class="co"># clean column names (lower case with underscores)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(site, average_diameter) <span class="sc">|&gt;</span> <span class="co"># select only the site and average_diameter columns</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">site =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    site <span class="sc">==</span> <span class="st">"Sev"</span> <span class="sc">~</span> <span class="st">"Burned"</span>, <span class="co"># change "Sev" site name to "Burned"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    site <span class="sc">==</span> <span class="st">"Unb"</span> <span class="sc">~</span> <span class="st">"Unburned"</span>)) <span class="co"># change "Unb" site name to "Unburned"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>tussocks_clean <span class="sc">|&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="co"># displays 10 random rows from the "tussocks_clean" data-frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 2
+   site     average_diameter
+   &lt;chr&gt;               &lt;dbl&gt;
+ 1 Unburned             31.5
+ 2 Unburned             13.6
+ 3 Unburned             20  
+ 4 Unburned             25.5
+ 5 Unburned             18.9
+ 6 Burned               24.3
+ 7 Burned               24.6
+ 8 Unburned             19.9
+ 9 Unburned             20.6
+10 Unburned             20.5</code></pre>
+</div>
+</div>
+</section>
+<section id="d.-summarizing-and-table-displays" class="level3">
+<h3 class="anchored" data-anchor-id="d.-summarizing-and-table-displays">d.&nbsp;Summarizing and table displays</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>tussocks_summary <span class="ot">&lt;-</span> tussocks_clean <span class="sc">|&gt;</span> <span class="co"># create an object called tussocks_summary using the tussocks_clean data frame</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(site) <span class="sc">|&gt;</span> <span class="co"># group by site </span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">round</span>(<span class="fu">mean</span>(average_diameter, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">digits =</span> <span class="dv">1</span>), <span class="co"># calculates the mean and rounds the value to 1 decimal place</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">se =</span> <span class="fu">round</span>(<span class="fu">sd</span>(average_diameter, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">n</span>()), <span class="at">digits =</span> <span class="dv">1</span>) <span class="co"># calculates standard error and rounds the value to 1 decimal place</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># create polished table using flextable</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>tussocks_summary <span class="sc">|&gt;</span> <span class="co"># pipe the tussocks_summary data frame into the table</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>() <span class="sc">|&gt;</span> <span class="co"># flextable() converts the data frame into a formatted table object # renames the column headers to be more readable</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_header_labels</span>(<span class="at">site =</span> <span class="st">"Site"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">mean =</span> <span class="st">"Mean"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">se =</span> <span class="st">"Standard Error"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autofit</span>() <span class="co"># automatically adjusts column widths to fit the content properly                       </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-13027d44{}.cl-12ff6046{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1300cab2{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1300cab3{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1300d80e{width:1.038in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1300d818{width:0.701in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1300d819{width:1.41in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1300d81a{width:1.038in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1300d822{width:0.701in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1300d823{width:1.41in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1300d82c{width:1.038in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1300d82d{width:0.701in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1300d836{width:1.41in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-13027d44"><thead><tr style="overflow-wrap:break-word;"><th class="cl-1300d80e"><p class="cl-1300cab2"><span class="cl-12ff6046">Site</span></p></th><th class="cl-1300d818"><p class="cl-1300cab3"><span class="cl-12ff6046">Mean</span></p></th><th class="cl-1300d819"><p class="cl-1300cab3"><span class="cl-12ff6046">Standard Error</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-1300d81a"><p class="cl-1300cab2"><span class="cl-12ff6046">Burned</span></p></td><td class="cl-1300d822"><p class="cl-1300cab3"><span class="cl-12ff6046">23.8</span></p></td><td class="cl-1300d823"><p class="cl-1300cab3"><span class="cl-12ff6046">0.7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1300d82c"><p class="cl-1300cab2"><span class="cl-12ff6046">Unburned</span></p></td><td class="cl-1300d82d"><p class="cl-1300cab3"><span class="cl-12ff6046">19.7</span></p></td><td class="cl-1300d836"><p class="cl-1300cab3"><span class="cl-12ff6046">0.6</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</section>
+<section id="e.-checking-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="e.-checking-assumptions">e. Checking assumptions</h3>
+<p><strong>Check 1: Visual tool - Normally distributed variable</strong></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> tussocks_clean,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">sample =</span> average_diameter)) <span class="sc">+</span> <span class="co"># specifies the variable to check for normality</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_qq_line</span>(<span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span> <span class="co"># making reference line green so its easier to see</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq</span>() <span class="sc">+</span> <span class="co"># geom_qq() plots the QQ points comparing data to theoretical normal distribution</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>site) <span class="sc">+</span> <span class="co"># creates separate plots for each site (Burned and Unburned)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"QQ Plot for Tussock Diameter by Site"</span>) <span class="sc">+</span> <span class="co"># adds title to the plot</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="co"># applies a minimal theme to the plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/qq plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Visual check: The points on the QQ plot for both burned and unburned sites approximately follow the reference line with only minor deviations at the tails. The reference line represents the theoretical distribution, so tussock diameters appear normally distributed.</p>
+<p><strong>Check 2: Equal Variance Test</strong></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var.test</span>( <span class="co"># perform an F-test to compare variances in tussock diameters</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  average_diameter <span class="sc">~</span> site, <span class="co"># test whether variances of tussock diameters differ by site </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> tussocks_clean) <span class="co"># use the cleaned tussock data-set</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    F test to compare two variances
+
+data:  average_diameter by site
+F = 0.92558, num df = 78, denom df = 110, p-value = 0.7221
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.6169823 1.4090774
+sample estimates:
+ratio of variances 
+         0.9255843 </code></pre>
+</div>
+</div>
+<p>Using a F-test of equal variance, I determined that group variances are equal (F-test, F(78, 110) = 0.93, p = 0.72).</p>
+</section>
+<section id="f.-do-a-t-test" class="level3">
+<h3 class="anchored" data-anchor-id="f.-do-a-t-test">f.&nbsp;Do a t-test</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>( <span class="co"># perform a two-sample t-test to compare mean tussock diameter</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  average_diameter <span class="sc">~</span> site, <span class="co"># test whether mean tussock diameters differ by site</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">var.equal =</span> <span class="cn">TRUE</span>, <span class="co"># assume equal variances based on the variance test</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> tussocks_clean <span class="co"># use the cleaned data frame again</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two Sample t-test
+
+data:  average_diameter by site
+t = 4.4663, df = 188, p-value = 1.371e-05
+alternative hypothesis: true difference in means between group Burned and group Unburned is not equal to 0
+95 percent confidence interval:
+ 2.298075 5.934027
+sample estimates:
+  mean in group Burned mean in group Unburned 
+              23.78632               19.67027 </code></pre>
+</div>
+</div>
+</section>
+<section id="g.-written-communication" class="level3">
+<h3 class="anchored" data-anchor-id="g.-written-communication">g. Written Communication</h3>
+<p>We found a significant difference in tussock mound diameters between unburned and burned sites (Student’s t-test: t(188) = 4.5, p &lt; 0.001, α = 0.05) with a moderate effect size (Cohen’s d = 0.66). On average, the mean tussock diameters were larger by about 4.1 cm in burned sites (mean = 23.8 cm, SE = 0.7, n = 79) in comparison to unburned sites (mean = 19.7 cm, SE = 0.6, n = 111).</p>
+</section>
+<section id="h.-making-a-new-figure" class="level3">
+<h3 class="anchored" data-anchor-id="h.-making-a-new-figure">h. Making a new figure</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create plot with x-axis as site, y-axis as average diameter</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> tussocks_clean,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> site,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> average_diameter,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> site,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">shape =</span> site)) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># adds individual data points</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="co"># jitters points horizontally</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">height =</span> <span class="dv">0</span>, <span class="co"># prevents vertical jitter</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="co"># make transparent</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="co"># edit site of points</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">stat_summary</span>(<span class="at">geom =</span> <span class="st">"point"</span>, <span class="co"># adds mean as a point</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">fun =</span> mean, <span class="co"># calculates mean for each site</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"red"</span>, <span class="co"># makes mean point "red"</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> <span class="co"># makes mean point larger than data points</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="fu">stat_summary</span>(<span class="at">fun.data =</span> mean_se, <span class="co"># calculates standard error and mean geom = "errorbar", # displays error bars</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">width =</span> <span class="fl">0.2</span>, <span class="co"># sets width of error bar caps</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">linewidth =</span> <span class="fl">0.8</span>, <span class="co"># sets thickness of error bar lines</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span> <span class="co"># colors error bars red</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="co"># adds plot title, author name as a subtitle, and labels axes</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Tussock Mound Diameter by Site Type"</span>,</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>     <span class="at">subtitle =</span> <span class="st">"Bella Kormos"</span>,</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>     <span class="at">x =</span> <span class="st">"Site"</span>,</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="st">"Average diameter (cm)"</span>) <span class="sc">+</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="co"># use a theme that creates white background without gridlines</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_classic</span>() <span class="sc">+</span> <span class="co"># removes legend</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="co"># sets custom colors for each site</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Burned"</span> <span class="ot">=</span> <span class="st">"forestgreen"</span>, <span class="st">"Unburned"</span> <span class="ot">=</span> <span class="st">"lightpink"</span>)) <span class="sc">+</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co"># sets custom shapes (5 = open diamond, 0 = square)</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Burned"</span> <span class="ot">=</span> <span class="dv">5</span>, <span class="st">"Unburned"</span> <span class="ot">=</span> <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/figure-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="i.-write-a-caption" class="level3">
+<h3 class="anchored" data-anchor-id="i.-write-a-caption">i. Write a caption</h3>
+<p><strong>Figure 1. Mean tussock diameter differs across sites.</strong> The green open diamonds represent tussock diameters measured (cm) at burned sites, and the pink open squares represent the tussock diameter measured (cm) at unburned sites. The red points represent the means for each site, and lines above and below represent the standard error bars. Data Source: Rocha, A. 2021. Tussock height and diameter in moist acidic tussock tundra at the site of the 2007 Anaktuvuk River fire scar, and nearby unburned tundra measured in 2016 ver 1. Environmental Data Initiative. https://doi.org/10.6073/ pasta/1dccd3fdb3aa693f9c2b69a24f8306ed (Accessed 2026-02-10).</p>
+</section>
+</section>
+</section>
+<section id="rest-of-this-assignment" class="level1">
+<h1>Rest of this assignment:</h1>
 <p><a href="midterm_resub.pdf">ENVS 193DS Midterm</a></p>
 <iframe src="midterm_resub.pdf" width="85%" height="500px">
 </iframe>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -7,6 +7,10 @@ categories: [Writing Sample]
 image: oakland2.png
 draft: false
 ---
+# **Project Proposal:The East Oakland Compost Center**
+
+## The EOCC
+The EOCC is a community based initiative to help address social inequity, food insecurity, and community wellness through composting and local empowerment. In the pdf below, I have attached my final project for my class, ENVS 155: The built environment, where I wrote a proposal as a potential solution to the food injustices in my hometown of Oakland.  
 
 [ENVS 155 Final Project](es155.pdf)
 
